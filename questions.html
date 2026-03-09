@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>题库 | 情报安全考试学习站</title>
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body data-page="questions">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./index.html" data-i18n="siteName">情报安全考试学习站</a>
+        <nav class="nav">
+          <a href="./index.html" data-nav="home" data-i18n="navHome">首页</a>
+          <a href="./questions.html" data-nav="questions" data-i18n="navQuestions">题库</a>
+          <a href="./knowledge.html" data-nav="knowledge" data-i18n="navKnowledge">知识点</a>
+        </nav>
+        <div class="lang-switch">
+          <button type="button" data-lang="zh">中</button>
+          <button type="button" data-lang="ja">日</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container main">
+      <section class="hero compact">
+        <h1 data-i18n="questionsTitle">题库练习</h1>
+        <p data-i18n="questionsIntro">示例题覆盖 CIA、加密和应急响应基础概念。</p>
+      </section>
+
+      <section class="list">
+        <article class="question-card">
+          <h2 data-i18n="q1Title">题目 1</h2>
+          <p data-i18n="q1Text">CIA 三要素中的 I 指的是哪一项？</p>
+          <ul>
+            <li data-i18n="q1A">A. Integrity（完整性）</li>
+            <li data-i18n="q1B">B. Isolation（隔离性）</li>
+            <li data-i18n="q1C">C. Inspection（审查）</li>
+            <li data-i18n="q1D">D. Identification（识别）</li>
+          </ul>
+          <details>
+            <summary data-i18n="showAnswer">查看答案</summary>
+            <p data-i18n="q1Answer">答案：A。I 代表 Integrity（完整性）。</p>
+          </details>
+        </article>
+
+        <article class="question-card">
+          <h2 data-i18n="q2Title">题目 2</h2>
+          <p data-i18n="q2Text">以下哪项最适合用于网站登录密码存储？</p>
+          <ul>
+            <li data-i18n="q2A">A. MD5 明文哈希</li>
+            <li data-i18n="q2B">B. 带盐的慢哈希（如 bcrypt）</li>
+            <li data-i18n="q2C">C. Base64 编码</li>
+            <li data-i18n="q2D">D. 对称加密后固定密钥保存</li>
+          </ul>
+          <details>
+            <summary data-i18n="showAnswer">查看答案</summary>
+            <p data-i18n="q2Answer">答案：B。密码应使用带盐且抗暴力破解的慢哈希算法。</p>
+          </details>
+        </article>
+
+        <article class="question-card">
+          <h2 data-i18n="q3Title">题目 3</h2>
+          <p data-i18n="q3Text">发生疑似入侵后最先应执行的动作是？</p>
+          <ul>
+            <li data-i18n="q3A">A. 立即删除相关日志</li>
+            <li data-i18n="q3B">B. 立即向外公开全部细节</li>
+            <li data-i18n="q3C">C. 启动预案并保全证据</li>
+            <li data-i18n="q3D">D. 先忽略等待再次发生</li>
+          </ul>
+          <details>
+            <summary data-i18n="showAnswer">查看答案</summary>
+            <p data-i18n="q3Answer">答案：C。应急响应中需要按流程处置并保全证据。</p>
+          </details>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small data-i18n="footerText">仅用于学习交流，内容可持续补充。</small>
+      </div>
+    </footer>
+
+    <script src="./assets/i18n.js"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>

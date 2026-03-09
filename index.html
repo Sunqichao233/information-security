@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>情报安全考试学习站</title>
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body data-page="home">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./index.html" data-i18n="siteName">情报安全考试学习站</a>
+        <nav class="nav">
+          <a href="./index.html" data-nav="home" data-i18n="navHome">首页</a>
+          <a href="./questions.html" data-nav="questions" data-i18n="navQuestions">题库</a>
+          <a href="./knowledge.html" data-nav="knowledge" data-i18n="navKnowledge">知识点</a>
+        </nav>
+        <div class="lang-switch">
+          <button type="button" data-lang="zh">中</button>
+          <button type="button" data-lang="ja">日</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container main">
+      <section class="hero">
+        <h1 data-i18n="homeTitle">日本情报安全考试学习入口</h1>
+        <p data-i18n="homeIntro">
+          覆盖 IPA 常见考试方向：基础概念、法规、网络防护和运维安全。支持中文和日文一键切换。
+        </p>
+      </section>
+
+      <section class="grid-2">
+        <article class="card">
+          <h2 data-i18n="homeQuestionsTitle">题库练习</h2>
+          <p data-i18n="homeQuestionsDesc">
+            按主题练习单选题，适合快速自测。
+          </p>
+          <a class="btn" href="./questions.html" data-i18n="homeQuestionsBtn">进入题库</a>
+        </article>
+        <article class="card">
+          <h2 data-i18n="homeKnowledgeTitle">知识点速记</h2>
+          <p data-i18n="homeKnowledgeDesc">
+            按章节查看核心定义和考试高频考点。
+          </p>
+          <a class="btn" href="./knowledge.html" data-i18n="homeKnowledgeBtn">查看知识点</a>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small data-i18n="footerText">仅用于学习交流，内容可持续补充。</small>
+      </div>
+    </footer>
+
+    <script src="./assets/i18n.js"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>
