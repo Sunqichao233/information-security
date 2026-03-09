@@ -35,6 +35,9 @@ a {
 .site-header {
   background: var(--panel);
   border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .header-inner {
@@ -112,6 +115,12 @@ a {
   color: var(--muted);
 }
 
+.meta-note {
+  margin: 0.7rem 0 1.1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .grid-2,
 .grid-3 {
   display: grid;
@@ -160,13 +169,125 @@ a {
   gap: 1rem;
 }
 
+.question-toolbar {
+  display: grid;
+  grid-template-columns: 1fr 220px auto;
+  gap: 0.8rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  align-items: end;
+}
+
+.question-toolbar label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.92rem;
+}
+
+.question-toolbar input,
+.question-toolbar select {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.5rem 0.65rem;
+  font: inherit;
+}
+
+.question-count {
+  margin: 0;
+  color: var(--muted);
+}
+
+.question-meta {
+  margin: 0 0 0.3rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.question-figure {
+  margin: 0.8rem 0;
+}
+
+.question-figure img {
+  width: 100%;
+  max-width: 760px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  display: block;
+}
+
+.question-figure figcaption {
+  margin-top: 0.3rem;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
 .question-card ul {
   margin: 0.6rem 0;
   padding-left: 1.1rem;
 }
 
-.question-card li {
-  margin: 0.2rem 0;
+.option-list {
+  list-style: none;
+  margin: 0.65rem 0;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.option-list li {
+  margin: 0;
+  display: flex;
+  gap: 0.55rem;
+  align-items: flex-start;
+}
+
+.option-marker {
+  min-width: 1.9rem;
+  text-align: center;
+  border: 1px solid #b7d3ce;
+  background: #ebf9f7;
+  color: #0f766e;
+  border-radius: 6px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.option-text {
+  flex: 1;
+}
+
+.empty-state {
+  margin: 0;
+  color: var(--muted);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.pager {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.pager button {
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+}
+
+.pager button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 
 summary {
@@ -190,5 +311,10 @@ summary {
 @media (max-width: 700px) {
   .header-inner {
     align-items: flex-start;
+  }
+
+  .question-toolbar {
+    grid-template-columns: 1fr;
+    align-items: stretch;
   }
 }

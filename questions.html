@@ -25,54 +25,33 @@
     <main class="container main">
       <section class="hero compact">
         <h1 data-i18n="questionsTitle">题库练习</h1>
-        <p data-i18n="questionsIntro">示例题覆盖 CIA、加密和应急响应基础概念。</p>
+        <p data-i18n="questionsIntro">按主题筛选和检索，题目支持中日双语与假名选项。</p>
       </section>
 
-      <section class="list">
-        <article class="question-card">
-          <h2 data-i18n="q1Title">题目 1</h2>
-          <p data-i18n="q1Text">CIA 三要素中的 I 指的是哪一项？</p>
-          <ul>
-            <li data-i18n="q1A">A. Integrity（完整性）</li>
-            <li data-i18n="q1B">B. Isolation（隔离性）</li>
-            <li data-i18n="q1C">C. Inspection（审查）</li>
-            <li data-i18n="q1D">D. Identification（识别）</li>
-          </ul>
-          <details>
-            <summary data-i18n="showAnswer">查看答案</summary>
-            <p data-i18n="q1Answer">答案：A。I 代表 Integrity（完整性）。</p>
-          </details>
-        </article>
+      <section class="question-toolbar">
+        <label>
+          <span data-i18n="searchLabel">搜索</span>
+          <input id="question-search" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="输入关键词" />
+        </label>
+        <label>
+          <span data-i18n="tagLabel">标签</span>
+          <select id="question-tag">
+            <option value="all" data-i18n="tagAll">全部</option>
+            <option value="basic" data-i18n="tagBasic">基础</option>
+            <option value="crypto" data-i18n="tagCrypto">加密</option>
+            <option value="incident" data-i18n="tagIncident">应急响应</option>
+            <option value="secure-dev" data-i18n="tagSecureDev">安全开发</option>
+          </select>
+        </label>
+        <p id="question-count" class="question-count"></p>
+      </section>
 
-        <article class="question-card">
-          <h2 data-i18n="q2Title">题目 2</h2>
-          <p data-i18n="q2Text">以下哪项最适合用于网站登录密码存储？</p>
-          <ul>
-            <li data-i18n="q2A">A. MD5 明文哈希</li>
-            <li data-i18n="q2B">B. 带盐的慢哈希（如 bcrypt）</li>
-            <li data-i18n="q2C">C. Base64 编码</li>
-            <li data-i18n="q2D">D. 对称加密后固定密钥保存</li>
-          </ul>
-          <details>
-            <summary data-i18n="showAnswer">查看答案</summary>
-            <p data-i18n="q2Answer">答案：B。密码应使用带盐且抗暴力破解的慢哈希算法。</p>
-          </details>
-        </article>
+      <section id="question-list" class="list"></section>
 
-        <article class="question-card">
-          <h2 data-i18n="q3Title">题目 3</h2>
-          <p data-i18n="q3Text">发生疑似入侵后最先应执行的动作是？</p>
-          <ul>
-            <li data-i18n="q3A">A. 立即删除相关日志</li>
-            <li data-i18n="q3B">B. 立即向外公开全部细节</li>
-            <li data-i18n="q3C">C. 启动预案并保全证据</li>
-            <li data-i18n="q3D">D. 先忽略等待再次发生</li>
-          </ul>
-          <details>
-            <summary data-i18n="showAnswer">查看答案</summary>
-            <p data-i18n="q3Answer">答案：C。应急响应中需要按流程处置并保全证据。</p>
-          </details>
-        </article>
+      <section class="pager">
+        <button id="page-prev" type="button" data-i18n="prevPage">上一页</button>
+        <span id="question-page"></span>
+        <button id="page-next" type="button" data-i18n="nextPage">下一页</button>
       </section>
     </main>
 
@@ -83,6 +62,7 @@
     </footer>
 
     <script src="./assets/i18n.js"></script>
+    <script src="./assets/questions-data.js"></script>
     <script src="./assets/app.js"></script>
   </body>
 </html>
