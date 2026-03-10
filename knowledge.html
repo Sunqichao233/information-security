@@ -28,73 +28,45 @@
         <p data-i18n="knowledgeIntro">按考试常见主题整理，适合临考前快速回顾。</p>
       </section>
 
-      <section class="grid-3">
-        <article class="card">
-          <h2 data-i18n="k1Title">CIA 三要素</h2>
-          <p data-i18n="k1Text">机密性、完整性、可用性是信息安全基本框架。</p>
-        </article>
-        <article class="card">
-          <h2 data-i18n="k2Title">风险管理</h2>
-          <p data-i18n="k2Text">通过识别、分析、评估和处置来降低风险影响。</p>
-        </article>
-        <article class="card">
-          <h2 data-i18n="k3Title">加密基础</h2>
-          <p data-i18n="k3Text">理解对称加密、非对称加密与哈希的使用场景。</p>
-        </article>
-        <article class="card">
-          <h2 data-i18n="k4Title">访问控制</h2>
-          <p data-i18n="k4Text">最小权限原则可减少越权操作和攻击面。</p>
-        </article>
-        <article class="card">
-          <h2 data-i18n="k5Title">日志与监控</h2>
-          <p data-i18n="k5Text">日志留存与告警联动是发现异常行为的关键。</p>
-        </article>
-        <article class="card">
-          <h2 data-i18n="k6Title">应急响应</h2>
-          <p data-i18n="k6Text">准备、检测、抑制、恢复、复盘构成完整闭环。</p>
-        </article>
-        <article class="card">
-          <h2 data-i18n="k7Title">社会工程学</h2>
-          <p data-i18n="k7Text">
-            不依赖技术漏洞，利用人的心理弱点获取或滥用信息。常见包括骗取 ID/密码、翻找废弃资料（trashing）和偷看离席设备信息。
-          </p>
-        </article>
-        <article class="card">
-          <h2 data-i18n="k8Title">肩窥攻击（Shoulder Hacking）</h2>
-          <p data-i18n="k8Text">
-            属于社会工程学手法，从使用者身后窥视其在 PC 或手机上的输入和画面，以窃取口令或敏感信息。
-          </p>
-        </article>
-        <article class="card">
-          <h2 data-i18n="k9Title">BEC（商务邮件诈骗）</h2>
-          <p data-i18n="k9Text">
-            冒充高管或交易方发送高仿真邮件，诱导转账到伪造账户或套取内部信息。BEC 是 Business Email Compromise 的缩写。
-          </p>
-        </article>
-        <article class="card">
-          <h2 data-i18n="k10Title">内部控制不完善</h2>
-          <p data-i18n="k10Text">
-            组织内用于预防舞弊和人为失误的制度或规则未建立，或虽已建立但未有效执行，导致控制失效与风险上升。
-          </p>
-        </article>
-        <article class="card">
-          <h2 data-i18n="k11Title">影子 IT（Shadow IT）</h2>
-          <p data-i18n="k11Text">
-            在正式 IT 管理视线之外，部门或个人擅自引入系统、云服务或设备。由于未纳入统一安全策略，可能成为攻击和恶意软件入侵路径。
-          </p>
-        </article>
-        <article class="card">
-          <h2 data-i18n="k12Title">安全审查（Security Clearance）</h2>
-          <p data-i18n="k12Text">
-            对可访问国家安全相关重要机密信息人员进行资格认定与审查的制度，用于控制高敏感信息访问范围。
-          </p>
-        </article>
-        <article class="card">
-          <h2 data-i18n="k13Title">保密协议/誓约书（NDA）</h2>
-          <p data-i18n="k13Text">
-            与员工或合作方约定保密义务的合同文件，通常会约束信息使用范围，并可约定在合同终止后继续承担一定期限保密责任。
-          </p>
-        </article>
+      <section class="category-block">
+        <div class="category-head">
+          <h2 data-i18n="catHumanTitle">人的物理セキュリティ対策</h2>
+          <p data-i18n="catHumanIntro">当前知识点统一归类在该栏目下。</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h2 data-i18n="k6Title">应急响应</h2>
+            <p data-i18n="k6Text">准备、检测、抑制、恢复、复盘构成完整闭环。</p>
+          </article>
+          <article class="card">
+            <h2 data-i18n="k7Title">社会工程学</h2>
+            <p data-i18n="k7Text">不依赖技术漏洞，利用人的心理弱点获取或滥用信息。</p>
+          </article>
+          <article class="card">
+            <h2 data-i18n="k8Title">肩窥攻击（Shoulder Hacking）</h2>
+            <p data-i18n="k8Text">从使用者身后窥视 PC 或手机画面，以窃取敏感信息。</p>
+          </article>
+          <article class="card">
+            <h2 data-i18n="k9Title">BEC（商务邮件诈骗）</h2>
+            <p data-i18n="k9Text">冒充高管或交易方发送高仿真邮件，诱导转账或套取内部信息。</p>
+          </article>
+          <article class="card">
+            <h2 data-i18n="k10Title">内部控制不完善</h2>
+            <p data-i18n="k10Text">制度未建立或执行失效会导致舞弊与失误风险上升。</p>
+          </article>
+          <article class="card">
+            <h2 data-i18n="k11Title">影子 IT（Shadow IT）</h2>
+            <p data-i18n="k11Text">无监管引入系统或设备，会绕开组织安全策略。</p>
+          </article>
+          <article class="card">
+            <h2 data-i18n="k12Title">安全审查（Security Clearance）</h2>
+            <p data-i18n="k12Text">通过资格认定控制高敏感信息访问范围。</p>
+          </article>
+          <article class="card">
+            <h2 data-i18n="k13Title">保密协议/誓约书（NDA）</h2>
+            <p data-i18n="k13Text">通过合同约束保密义务及离职后持续责任。</p>
+          </article>
+        </div>
       </section>
     </main>
 

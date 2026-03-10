@@ -121,6 +121,45 @@ a {
   font-size: 0.9rem;
 }
 
+.exam-format {
+  margin-bottom: 1rem;
+}
+
+.exam-format h3 {
+  margin: 0.9rem 0 0.3rem;
+  font-size: 1.02rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin-top: 0.7rem;
+}
+
+.exam-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 580px;
+}
+
+.exam-table th,
+.exam-table td {
+  border: 1px solid #c9d3df;
+  padding: 0.65rem 0.75rem;
+  text-align: left;
+}
+
+.exam-table th {
+  background: #eef3f8;
+}
+
+.callout {
+  margin-top: 0.75rem;
+  border: 2px dotted #c3ccd8;
+  border-radius: 8px;
+  padding: 0.65rem 0.8rem;
+  background: #f8fafc;
+}
+
 .grid-2,
 .grid-3 {
   display: grid;
@@ -153,6 +192,43 @@ a {
 .question-card p {
   margin: 0.5rem 0 0;
   color: var(--muted);
+}
+
+.category-block + .category-block {
+  margin-top: 1.2rem;
+}
+
+.category-head {
+  margin-bottom: 0.7rem;
+}
+
+.category-head h2 {
+  margin: 0;
+  font-size: 1.14rem;
+}
+
+.category-head p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
+.k-badge {
+  margin: 0 0 0.35rem;
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.k-badge.human {
+  color: #115e59;
+  background: #dff6f2;
+}
+
+.k-badge.physical {
+  color: #1e40af;
+  background: #e8f0ff;
 }
 
 .btn {
