@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>暗号技术 | 情报安全考试学习站</title>
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body data-page="knowledge">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./index.html" data-i18n="siteName">情报安全考试学习站</a>
+        <nav class="nav">
+          <a href="./index.html" data-nav="home" data-i18n="navHome">首页</a>
+          <a href="./questions.html" data-nav="questions" data-i18n="navQuestions">题库</a>
+          <a href="./knowledge.html" data-nav="knowledge" data-i18n="navKnowledge">知识点</a>
+        </nav>
+        <div class="lang-switch">
+          <button type="button" data-lang="zh">中</button>
+          <button type="button" data-lang="ja">日</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container main">
+      <section class="hero compact">
+        <h1 data-i18n="cryptoPageTitle">暗号技术（暗号技術）</h1>
+        <p data-i18n="cryptoPageIntro">本页集中整理加密与解密相关基础概念。</p>
+      </section>
+
+      <section class="category-block">
+        <div class="category-head">
+          <h2 data-i18n="cryptoListTitle">暗号技术知识点</h2>
+        </div>
+        <div class="knowledge-list">
+          <details class="knowledge-item">
+            <summary><span data-i18n="k21Title">什么是加密？</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k21Text">
+                加密是把明文通过算法与密钥转换为难以理解的密文；复号则使用对应密钥还原为明文。图示例子可理解为“文字按一定规则位移”，算法是“文字位移”，密钥是“位移量（如 1 个字符）”。
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <p class="meta-note">
+        <a href="./knowledge.html" data-i18n="backToKnowledge">返回综合知识点页</a>
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small data-i18n="footerText">仅用于学习交流，内容可持续补充。</small>
+      </div>
+    </footer>
+
+    <script src="./assets/i18n.js"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>
