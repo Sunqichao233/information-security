@@ -87,6 +87,68 @@
               <p data-i18n="k24DemeritText">与共通键方式相比算法更复杂，计算开销更高，处理速度通常更慢。</p>
             </div>
           </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k25Title">所需密钥数量（规模比较）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k25Text">
+                当 n 个成员两两通信时，共通键方式需要 n(n-1)/2 把密钥；公开键方式需要 2n 把密钥。成员数量增长后，共通键的密钥管理复杂度上升更快。
+              </p>
+              <ul>
+                <li data-i18n="k25Step1">解题思路：先确定“每个通信关系是否需要独立密钥”。</li>
+                <li data-i18n="k25Step2">共通键方式：任意两人一组共用一把密钥，组合数为 C(n,2)=n(n-1)/2。</li>
+                <li data-i18n="k25Step3">公开键方式：每人各有“公开键+秘密键”各一把，所以总键数为 2n。</li>
+                <li data-i18n="k25Step4">代入例题 n=10：共通键 10×9/2=45，把；公开键 2×10=20，把。</li>
+                <li data-i18n="k25Step5">结论：人数越多，共通键增长近似二次方，公开键线性增长，后者更利于大规模管理。</li>
+              </ul>
+              <p><strong data-i18n="k25DeriveTitle">为什么 C(n,2)=n(n-1)/2？</strong></p>
+              <ul>
+                <li data-i18n="k25Derive1">先按“有顺序”数二人组：第 1 人有 n 种选法，第 2 人有 n-1 种，所以共有 n(n-1) 对。</li>
+                <li data-i18n="k25Derive2">但通信对 (A,B) 与 (B,A) 是同一对，被重复计算了 2 次。</li>
+                <li data-i18n="k25Derive3">因此要除以 2 去重：n(n-1)/2。</li>
+                <li data-i18n="k25Derive4">这正是组合数定义：C(n,2)=n!/(2!(n-2)!)=n(n-1)/2。</li>
+              </ul>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k26Title">AES</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k26Text">
+                AES（Advanced Encryption Standard）是广泛使用的共通键分组加密算法。标准分组长度为 128 bit，密钥长度常见 128/192/256 bit。其速度快、强度高，常用于网络通信与无线加密等场景。
+              </p>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k27Title">RSA 加密</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k27Text">
+                RSA 是典型公开键加密算法，安全性依赖“大整数素因数分解困难性”。常见于 HTTPS、数字签名与密钥交换。名称来源于 Rivest、Shamir、Adleman 三位提出者姓氏首字母。
+              </p>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k28Title">混合加密方式（Hybrid）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k28Text">
+                混合加密结合了共通键与公开键两类方式的优点：初次仅用公开键方式安全传输“会话共通键”，后续数据通信改用共通键方式进行高速加密。
+              </p>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k29Title">CRYPTREC 密码清单</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k29Text">
+                CRYPTREC 是“密码技术评估委员会”的相关项目，由总务省、经济产业省与 IPA 等机构协同推进。其公开的推荐算法清单常作为政府机构与企业选型参考，常见包括 AES、RSA、SHA-256 等。
+              </p>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k30Title">危殆化（安全性劣化）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k30Text">
+                在密码技术中，危殆化是指原本被认为足够安全的算法，随着算力提升或分析方法进步而更容易被破解，导致实际安全强度下降到不再可用的状态。
+              </p>
+            </div>
+          </details>
         </div>
       </section>
 
