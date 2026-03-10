@@ -231,6 +231,69 @@ a {
   background: #e8f0ff;
 }
 
+.knowledge-list {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.knowledge-item {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.knowledge-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.75rem 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.knowledge-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.knowledge-item summary span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.knowledge-item summary::after {
+  content: "▾";
+  color: var(--muted);
+  margin-left: 0.6rem;
+  flex-shrink: 0;
+}
+
+.knowledge-item[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.knowledge-detail {
+  border-top: 1px solid var(--line);
+  padding: 0.7rem 0.9rem 0.8rem;
+}
+
+.knowledge-detail p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.knowledge-detail ul {
+  margin: 0.55rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.knowledge-detail li + li {
+  margin-top: 0.35rem;
+}
+
 .btn {
   display: inline-block;
   margin-top: 0.8rem;

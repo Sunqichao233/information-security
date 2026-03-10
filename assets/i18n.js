@@ -87,6 +87,14 @@ window.I18N = {
     k13Title: "保密协议/誓约书（NDA）",
     k13Text:
       "与员工或合作方约定保密义务的合同文件，通常会约束信息使用范围，并可约定在合同终止后继续承担一定期限保密责任。",
+    k14Title: "RASIS 可靠性评价指标",
+    k14Intro:
+      "RASIS 是评价计算机系统可信赖性的五维指标框架，取 Reliability、Availability、Serviceability、Integrity、Security 的首字母。",
+    k14R: "R（Reliability，可靠性）：系统不停止或不明显降级并按预期运行。常用指标：MTBF。",
+    k14A: "A（Availability，可用性）：系统在需要时可被持续使用。常用指标：稼动率。",
+    k14S: "S（Serviceability，可维护性）：故障后修复与恢复的容易程度。常用指标：MTTR。",
+    k14I: "I（Integrity，保全性/完整性）：数据不易破损且保持一致、正确的状态。",
+    k14Sec: "S（Security，安全性/机密性）：降低数据被篡改与泄露的风险程度。",
     footerText: "仅用于学习交流，内容可持续补充。"
   },
   ja: {
@@ -177,6 +185,14 @@ window.I18N = {
     k13Title: "秘密保持契約・誓約書（NDA）",
     k13Text:
       "取引先や従業員に対し秘密保持義務を徹底するための契約書・誓約書。契約終了後も一定期間の秘密保持義務を定める場合がある。",
+    k14Title: "RASIS 信頼性評価指標",
+    k14Intro:
+      "RASIS はコンピュータシステムの信頼性を評価する5つの指標で、Reliability、Availability、Serviceability、Integrity、Security の頭文字を取ったもの。",
+    k14R: "R（Reliability，信頼性）：停止や性能低下を起こしにくく、期待どおり稼働する特性。代表指標：MTBF。",
+    k14A: "A（Availability，可用性）：必要なときに継続して利用できる特性。代表指標：稼働率。",
+    k14S: "S（Serviceability，保守性）：障害発生時の修復しやすさ・復旧しやすさ。代表指標：MTTR。",
+    k14I: "I（Integrity，保全性・完全性）：データが破損しにくく、一貫して正確な状態が保たれる特性。",
+    k14Sec: "S（Security，安全性・機密性）：データ改ざんや漏えいが起きにくい度合い。",
     footerText: "学習目的のサンプルです。継続的に拡張可能。"
   }
 };
