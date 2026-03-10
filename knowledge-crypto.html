@@ -39,6 +39,52 @@
               <p data-i18n="k21Text">
                 加密是把明文通过算法与密钥转换为难以理解的密文；复号则使用对应密钥还原为明文。图示例子可理解为“文字按一定规则位移”，算法是“文字位移”，密钥是“位移量（如 1 个字符）”。
               </p>
+              <figure class="knowledge-figure">
+                <img src="./assets/images/crypto-shift-diagram.svg" alt="加密与复号的字符位移示意图" loading="lazy" />
+                <figcaption data-i18n="k21FigureCaption">示例：明文「タコヤキ」经位移加密得到密文「チサユク」，再通过对应密钥复号。</figcaption>
+              </figure>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k23Title">共通键加密方式（对称加密）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k23Text">
+                共通键加密（对称加密）是指加密与复号都使用同一把密钥。发送方用共享密钥把明文转为密文，接收方用同一密钥把密文还原为明文。
+              </p>
+              <figure class="knowledge-figure">
+                <img src="./assets/images/symmetric-key-diagram.svg" alt="共通键加密方式示意图" loading="lazy" />
+                <figcaption data-i18n="k23FigureCaption">图示：发送者与接收者共享同一把密钥，分别用于加密与复号。</figcaption>
+              </figure>
+              <p><strong data-i18n="k23MeritTitle">优点</strong></p>
+              <p data-i18n="k23MeritText">结构简单、运算负担小，因此加解密处理速度快。</p>
+              <p><strong data-i18n="k23DemeritTitle">缺点</strong></p>
+              <ul>
+                <li data-i18n="k23Demerit1">初次通信需要安全地把共通键传给对方；若密钥在传递时泄露，后续通信可能被窃听。</li>
+                <li data-i18n="k23Demerit2">通信对象越多，所需管理的密钥对数量越多，密钥管理复杂度上升。</li>
+              </ul>
+              <p data-i18n="k23Bridge">这些缺点通常由“公开键方式（非对称加密）”来补足。</p>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k24Title">公开键加密方式（非对称加密）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k24Text">
+                公开键加密是在加密与复号时使用不同密钥的方式。发送者使用接收者的公开键加密，接收者使用自己持有的秘密键复号。
+              </p>
+              <p data-i18n="k24PointText">
+                在公开键方式中，接收方预先生成“公开键 + 秘密键”配对：公开键发给发送方用于加密，秘密键仅由接收方保管用于复号。公开键不能用于复号。
+              </p>
+              <figure class="knowledge-figure">
+                <img src="./assets/images/public-key-diagram.svg" alt="公开键加密方式示意图" loading="lazy" />
+                <figcaption data-i18n="k24FigureCaption">图示：用接收者公开键加密，用接收者秘密键复号，形成“不同键”机制。</figcaption>
+              </figure>
+              <p><strong data-i18n="k24MeritTitle">优点</strong></p>
+              <ul>
+                <li data-i18n="k24Merit1">即使公开键被截获也问题不大，因为无法据此直接推出秘密键。</li>
+                <li data-i18n="k24Merit2">可以把同一公开键分发给多个发送方，密钥分发管理更容易。</li>
+              </ul>
+              <p><strong data-i18n="k24DemeritTitle">缺点</strong></p>
+              <p data-i18n="k24DemeritText">与共通键方式相比算法更复杂，计算开销更高，处理速度通常更慢。</p>
             </div>
           </details>
         </div>
