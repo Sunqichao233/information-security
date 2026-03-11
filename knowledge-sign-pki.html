@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>デジタル署名 / PKI | 情报安全考试学习站</title>
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body data-page="knowledge">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./index.html" data-i18n="siteName">情报安全考试学习站</a>
+        <nav class="nav">
+          <a href="./index.html" data-nav="home" data-i18n="navHome">首页</a>
+          <a href="./questions.html" data-nav="questions" data-i18n="navQuestions">题库</a>
+          <a href="./knowledge.html" data-nav="knowledge" data-i18n="navKnowledge">知识点</a>
+        </nav>
+        <div class="lang-switch">
+          <button type="button" data-lang="zh">中</button>
+          <button type="button" data-lang="ja">日</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container main">
+      <section class="hero compact">
+        <h1 data-i18n="signPkiPageTitle">デジタル署名 / PKI</h1>
+        <p data-i18n="signPkiPageIntro">本页集中整理数字签名与 PKI 的基础知识点。</p>
+      </section>
+
+      <section class="category-block">
+        <div class="category-head">
+          <h2 data-i18n="signPkiListTitle">デジタル署名 / PKI 知识点</h2>
+        </div>
+        <div class="knowledge-list">
+          <details class="knowledge-item">
+            <summary><span data-i18n="k31Title">数字签名（デジタル署名）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k31Text">
+                数字签名是利用公开键密码技术来验证电子文档是否被冒用（なりすまし）或篡改（改ざん）的机制。其关键在于：签名时使用发送者的秘密键，验证时使用发送者公开键，和“保密通信时用公开键加密、秘密键复号”的方向相反。
+              </p>
+              <p data-i18n="k31FlowText">
+                发送者先准备一对钥匙（公开键/秘密键），并使用自己的秘密键对数据进行签名。接收者拿到数据后，用该发送者对应的公开键来验证签名。
+              </p>
+              <figure class="knowledge-figure">
+                <img src="./assets/images/digital-signature-flow.svg" alt="数字签名流程图：发送者用秘密键签名，接收者用公开键验证" />
+                <figcaption data-i18n="k31FlowCaption">
+                  图示：发送者使用秘密键进行签名，接收者使用公开键进行验证。
+                </figcaption>
+              </figure>
+              <p data-i18n="k31FlowPoint">
+                若接收侧可用公开键成功验证，通常可判断数据确由对应秘密键持有者生成，且传输过程中未被篡改。
+              </p>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k32Title">PKI（公开键基础设施）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k32Text">
+                PKI 通过证书机构（CA）签发数字证书，将“公开键与实体身份”绑定，建立可验证信任链。浏览器验证服务器证书、企业签名验证等都依赖 PKI。
+              </p>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k33Title">签名键 / 验证键（署名鍵 / 検証鍵）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k33Text">
+                在数字签名中，用于“生成签名”的键（发送者秘密键）称为签名键（署名鍵）；用于“验证签名”的键（发送者公开键）称为验证键（検証鍵）。
+              </p>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k34Title">哈希函数（ハッシュ関数）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k34Text">
+                哈希函数可将任意长度数据映射为固定长度字符串（哈希值/消息摘要）。同一输入必得同一输出，且通常难以从哈希值反推出原文，常用于完整性校验和数字签名前的摘要计算。
+              </p>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k35Title">哈希值 / 消息摘要（メッセージダイジェスト）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k35Text">
+                哈希值是哈希函数输出的固定长度结果。把大数据转换为短摘要后可快速比较：摘要不一致可判定数据发生变化；摘要一致通常表示未被篡改（仍需考虑极低概率碰撞）。
+              </p>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k36Title">代表性哈希函数（SHA-256 / SHA-2）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k36Text">
+                SHA-256 属于 SHA-2 家族，可从任意长度输入生成 256 bit 哈希值，当前被广泛认为安全性较高。SHA-2 是 SHA-1 的后继标准，常见输出长度包含 224 / 256 / 384 / 512 bit。
+              </p>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k37Title">认证局（CA）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k37Text">
+                认证局（CA）是可被信赖的第三方机构，负责签发数字证书，用于证明“主体身份与公开键”的绑定关系。在 PKI 中，证书验证是否成立通常依赖对 CA 信任链的检查。
+              </p>
+              <p data-i18n="k37TypeText">
+                面向公众提供证书服务的 CA 常称为 Public CA；组织内部自行建设和运营的 CA 常称为 Private CA（私有 CA）。
+              </p>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k38Title">数字证书与数字签名（同一流程理解）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k38Text">
+                可把“数字证书”和“数字签名”放在同一流程中理解：证书先解决“公钥属于谁”，签名再解决“是否本人发送、内容是否被改动”。
+              </p>
+              <figure class="knowledge-figure">
+                <img src="./assets/images/certificate-issue-flow.svg" alt="数字证书签发流程示意图：A 向 CA 申请证书，CA 签发证书，B 验证 A 公钥归属" loading="lazy" />
+                <figcaption data-i18n="k38Figure1Caption">图 1：数字证书签发流程（申请、签发、验证归属）。</figcaption>
+              </figure>
+              <figure class="knowledge-figure">
+                <img src="./assets/images/signature-vs-certificate-flow.svg" alt="数字签名与数字证书关系图：证书绑定身份与公钥，签名用于防篡改与防冒充" loading="lazy" />
+                <figcaption data-i18n="k38Figure2Caption">
+                  图 2：数字签名与数字证书分工（证书绑定身份，签名验证完整性与发送者真实性）。
+                </figcaption>
+              </figure>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k39Title">数字签名要与公开键加密组合使用</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k39Text">
+                数字签名本身主要用于验证发送者真实性与数据完整性，不能单独实现“防窃听”的机密性保护。若要防止第三方阅读内容，应再结合公开键加密。
+              </p>
+              <ul>
+                <li data-i18n="k39Step1">签名阶段：发送者用自己的秘密键对摘要签名，供接收者验证“是否被篡改、是否为本人发送”。</li>
+                <li data-i18n="k39Step2">保密阶段：发送者用接收者公开键加密文档，接收者用自己的秘密键复号，实现机密性。</li>
+                <li data-i18n="k39Step3">结论：签名负责“真实性+完整性”，公开键加密负责“机密性”。</li>
+              </ul>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k40Title">信任锚点（Trust Anchor / トラストアンカー）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k40Text">
+                信任锚点也称信任基点或 Trust Point，是信任链中“预先被本地明确可信”的起点。系统会从该起点向下验证证书链，来判断后续实体是否可信。
+              </p>
+              <ul>
+                <li data-i18n="k40Step1">信任链示例：A 保证 B，B 保证 C。</li>
+                <li data-i18n="k40Step2">若 A 被设为可信锚点，则可沿链推导并接受 C 的可信性（在链与签名都有效前提下）。</li>
+                <li data-i18n="k40Step3">在 PKI 中，通常“根证书（Root Certificate）”就是信任锚点。</li>
+              </ul>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k41Title">根证书（Root Certificate）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k41Text">
+                在 PKI 中，根证书是由根认证局签发的自签名数字证书，属于信任链最上层的“信任基点（Trust Anchor）”。终端或浏览器通常预置并信任根证书，用于后续证书链验证。
+              </p>
+              <ul>
+                <li data-i18n="k41Step1">根证书通常存放在操作系统或浏览器的信任库中。</li>
+                <li data-i18n="k41Step2">验证服务器证书时，会沿链回溯到受信任根证书，确认链上签名关系与有效性。</li>
+              </ul>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k42Title">中间 CA 证书（Intermediate CA Certificate）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k42Text">
+                中间 CA 证书用于连接“根 CA”与“终端实体证书”（如服务器证书），由上级 CA 签发，用来证明下级发证机构的正当性，从而构成可验证的证书链（认证树）。
+              </p>
+              <ul>
+                <li data-i18n="k42Step1">典型链路：根证书 -> 中间 CA 证书 -> 服务器/客户端证书。</li>
+                <li data-i18n="k42Step2">引入中间 CA 可隔离根私钥使用风险，便于分级管理与吊销控制。</li>
+              </ul>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k43Title">服务器证书（Server Certificate）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k43Text">
+                服务器证书是服务器向可信 CA 申请并获得的证书，用于证明服务器身份的正当性。证书中通常包含服务器公开键、域名（CN/SAN）、有效期，以及 CA 的数字签名。
+              </p>
+              <ul>
+                <li data-i18n="k43Step1">客户端在 TLS/HTTPS 握手中验证服务器证书链、域名匹配与有效期。</li>
+                <li data-i18n="k43Step2">若启用双向 TLS（mTLS），客户端也会出示客户端证书实现相互认证。</li>
+                <li data-i18n="k43Step3">结论：服务器证书是 HTTPS 信任建立与防冒充的核心组件。</li>
+              </ul>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k44Title">客户端证书（Client Certificate）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k44Text">
+                客户端证书用于客户端向服务器证明自身身份，常见于双向 TLS（mTLS）场景。它通常由可信 CA 签发，并与客户端私钥成对使用，以实现更强的访问控制与身份确认。
+              </p>
+              <ul>
+                <li data-i18n="k44Step1">在相互认证中，服务器会请求并验证客户端证书的签发链、有效期和状态。</li>
+                <li data-i18n="k44Step2">证书可部署在 PC、手机或受管终端的证书存储区，由浏览器或应用在握手时提交。</li>
+                <li data-i18n="k44Step3">验证通过才允许访问受保护资源，可显著降低账号口令被盗后的冒用风险。</li>
+              </ul>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k45Title">服务器与客户端的相互认证（mTLS）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k45Text">
+                在双向 TLS（mTLS）中，通信双方都会出示并验证证书：客户端先验证服务器证书，服务器再验证客户端证书，从而实现“双向身份确认”。
+              </p>
+              <ul>
+                <li data-i18n="k45Step1">服务器证书与客户端证书通常都由组织侧（服务提供方）统一向 CA 申请并发放管理。</li>
+                <li data-i18n="k45Step2">握手期间，双方都要检查证书链、有效期、用途和吊销状态，任一失败都应拒绝连接。</li>
+                <li data-i18n="k45Step3">相较单向 TLS，mTLS 额外确认“客户端是谁”，适合内网系统、API 网关和高敏感业务。</li>
+              </ul>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k46Title">CRL（证书吊销列表）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k46Text">
+                CRL（Certificate Revocation List）是 CA 发布的“已吊销证书清单”。其中列出虽未到期但因密钥泄露、主体变更或误发等原因被提前判定无效的证书序列号。
+              </p>
+              <ul>
+                <li data-i18n="k46Step1">证书验证时除检查链、有效期外，还需检查是否出现在 CRL 中。</li>
+                <li data-i18n="k46Step2">若命中吊销记录，应视为证书失效并拒绝信任该证书。</li>
+                <li data-i18n="k46Step3">CRL 是离线批量发布机制，常与 OCSP 等在线状态查询方式配合使用。</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <p class="meta-note">
+        <a href="./knowledge.html" data-i18n="backToKnowledge">返回综合知识点页</a>
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small data-i18n="footerText">仅用于学习交流，内容可持续补充。</small>
+      </div>
+    </footer>
+
+    <script src="./assets/i18n.js"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>
