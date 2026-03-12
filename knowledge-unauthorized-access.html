@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>不正アクセス対策 | 情报安全考试学习站</title>
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body data-page="knowledge">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="./index.html" data-i18n="siteName">情报安全考试学习站</a>
+        <nav class="nav">
+          <a href="./index.html" data-nav="home" data-i18n="navHome">首页</a>
+          <a href="./questions.html" data-nav="questions" data-i18n="navQuestions">题库</a>
+          <a href="./knowledge.html" data-nav="knowledge" data-i18n="navKnowledge">知识点</a>
+        </nav>
+        <div class="lang-switch">
+          <button type="button" data-lang="zh">中</button>
+          <button type="button" data-lang="ja">日</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container main">
+      <section class="hero compact">
+        <h1 data-i18n="unauthPageTitle">不正アクセス対策</h1>
+        <p data-i18n="unauthPageIntro">本页集中整理防范外部不正访问的基础知识点。</p>
+      </section>
+
+      <section class="category-block">
+        <div class="category-head">
+          <h2 data-i18n="unauthListTitle">不正アクセス対策知识点</h2>
+        </div>
+        <div class="knowledge-list">
+          <details class="knowledge-item">
+            <summary><span data-i18n="k47Title">防火墙（ファイアウォール）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k47Text">
+                防火墙用于阻止来自外部网络的不正当访问，通常部署在互联网（外部）与企业内网 LAN（内部）之间。
+              </p>
+              <p><strong data-i18n="k47Type1Title">包过滤型防火墙（Packet Filtering）</strong></p>
+              <p data-i18n="k47Type1Text">
+                主要检查数据包头部信息（如源/目的 IP、端口、协议等），通常不解析应用层载荷内容；常结合 ACL（白名单/黑名单）进行放行与阻断。
+              </p>
+              <figure class="knowledge-figure">
+                <img src="./assets/images/firewall-packet-filtering-diagram.svg" alt="包过滤型防火墙示意图：根据 ACL 规则允许或拒绝数据包进入内网" loading="lazy" />
+                <figcaption data-i18n="k47FigureCaption">图示：包过滤防火墙根据 ACL 规则对流量执行允许/拒绝。</figcaption>
+              </figure>
+              <p><strong data-i18n="k47Type2Title">应用网关型防火墙（Application Gateway）</strong></p>
+              <p data-i18n="k47Type2Text">
+                以代理方式对应用层协议与内容进行更细粒度检查，可按应用特征制定更严格访问控制策略。
+              </p>
+              <figure class="knowledge-figure">
+                <img src="./assets/images/firewall-application-gateway-diagram.svg" alt="应用网关型防火墙示意图：代理服务器检查并中继客户端与外部Web服务器通信" loading="lazy" />
+                <figcaption data-i18n="k47Figure2Caption">图示：应用网关型防火墙作为代理，检查应用层内容后再中继通信。</figcaption>
+              </figure>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k48Title">DMZ（非武装地带）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k48Text">
+                DMZ（DeMilitarized Zone）是位于外部网络与内部网络之间、与两侧都进行逻辑隔离的网络区域。通常将对外公开服务（如 Web、邮件、DNS）放在 DMZ，以降低内网直接暴露风险。
+              </p>
+              <ul>
+                <li data-i18n="k48Step1">直译常称“非武装地带”，强调其处于边界缓冲区的角色。</li>
+                <li data-i18n="k48Step2">即使 DMZ 主机被攻陷，攻击者仍需突破额外边界控制才能进入内网。</li>
+              </ul>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k49Title">WAF（Web Application Firewall）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k49Text">
+                WAF 是用于防护 Web 应用层漏洞攻击的防火墙，重点应对 SQL 注入、XSS、目录遍历等针对 HTTP/HTTPS 的攻击。
+              </p>
+              <ul>
+                <li data-i18n="k49Step1">可视为应用网关型防火墙中的 Web 特化形态，专门针对 Web 通信流量做规则检测与拦截。</li>
+                <li data-i18n="k49Step2">常部署在互联网与 Web 服务器之间，与网络层防火墙协同，形成分层防护。</li>
+              </ul>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k50Title">False Positive / False Negative（误报与漏报）</span></summary>
+            <div class="knowledge-detail">
+              <p><strong data-i18n="k50FpTitle">False Positive（误报 / 假阳性）</strong></p>
+              <p data-i18n="k50FpText">
+                安全系统把正常行为误判为攻击或威胁，导致不必要的告警或拦截。
+              </p>
+              <p><strong data-i18n="k50FnTitle">False Negative（漏报 / 假阴性）</strong></p>
+              <p data-i18n="k50FnText">
+                安全系统未能检测到真实攻击，把异常行为误判为正常，导致威胁绕过防护。
+              </p>
+              <p data-i18n="k50TradeoffText">
+                误报与漏报通常存在权衡关系（trade-off）：规则越严格通常可降低漏报但可能提升误报，规则越宽松则相反。
+              </p>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k51Title">检疫网络（Quarantine Network）</span></summary>
+            <div class="knowledge-detail">
+              <p data-i18n="k51Text">
+                检疫网络是用于检查外来终端（如带回公司的笔记本）是否感染恶意软件的专用隔离网络。终端先在检疫区完成病毒检查和补丁确认，合格后才允许接入内网。
+              </p>
+              <figure class="knowledge-figure">
+                <img src="./assets/images/quarantine-network-diagram.svg" alt="检疫网络流程图：外来PC先进入隔离段检测，安全后放行到社内LAN，异常则隔离" loading="lazy" />
+                <figcaption data-i18n="k51FigureCaption">
+                  图示：外来终端先进入检疫网络，检查通过后接入内网，异常则禁止连接并隔离复检。
+                </figcaption>
+              </figure>
+            </div>
+          </details>
+          <details class="knowledge-item">
+            <summary><span data-i18n="k52Title">IDS / IPS（入侵检测与入侵防御）</span></summary>
+            <div class="knowledge-detail">
+              <p><strong data-i18n="k52IdsTitle">IDS（Intrusion Detection System）</strong></p>
+              <p data-i18n="k52IdsText">
+                IDS 用于检测不正入侵行为并发出告警，典型分类包括 HIDS（主机型 IDS）与 NIDS（网络型 IDS）。
+              </p>
+              <p><strong data-i18n="k52IpsTitle">IPS（Intrusion Prevention System）</strong></p>
+              <p data-i18n="k52IpsText">
+                IPS 在检测基础上进一步执行阻断/防御动作，可在攻击流量通过前或通过时实施拦截。
+              </p>
+              <p data-i18n="k52DiffText">
+                核心区别：IDS 侧重“发现与告警”，IPS 侧重“发现并防止”。实际部署中常与防火墙、WAF 联动形成多层防护。
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <p class="meta-note">
+        <a href="./knowledge.html" data-i18n="backToKnowledge">返回综合知识点页</a>
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small data-i18n="footerText">仅用于学习交流，内容可持续补充。</small>
+      </div>
+    </footer>
+
+    <script src="./assets/i18n.js"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>
