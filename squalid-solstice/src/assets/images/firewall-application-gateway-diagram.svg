@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Application Gateway Firewall Diagram</title>
+  <desc id="desc">Client sends request to proxy firewall, firewall inspects and relays to web server, then returns inspected response.</desc>
+  <rect width="1200" height="700" fill="#eef6ff"/>
+  <text x="600" y="55" text-anchor="middle" font-size="42" font-family="Arial, sans-serif" fill="#1c2b39" font-weight="700">
+    アプリケーションゲートウェイ型ファイアウォール（プロキシ）の仕組み
+  </text>
+
+  <defs>
+    <marker id="blueArrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#4a89dc"/>
+    </marker>
+    <marker id="greenArrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#5cb85c"/>
+    </marker>
+  </defs>
+
+  <rect x="55" y="250" width="120" height="80" rx="8" fill="#d8ebff" stroke="#5b86ad" stroke-width="3"/>
+  <rect x="185" y="246" width="42" height="92" rx="8" fill="#e9f3ff" stroke="#5b86ad" stroke-width="3"/>
+  <text x="140" y="395" text-anchor="middle" font-size="24" font-family="Arial, sans-serif" fill="#1f2e3d">客户端</text>
+  <text x="140" y="425" text-anchor="middle" font-size="20" font-family="Arial, sans-serif" fill="#1f2e3d">（社内PC）</text>
+
+  <rect x="1010" y="250" width="120" height="70" rx="35" fill="#f7fbff" stroke="#6e93b5" stroke-width="3"/>
+  <ellipse cx="980" cy="300" rx="70" ry="55" fill="#f7fbff" stroke="#6e93b5" stroke-width="3"/>
+  <ellipse cx="1060" cy="300" rx="68" ry="50" fill="#f7fbff" stroke="#6e93b5" stroke-width="3"/>
+  <rect x="1002" y="273" width="96" height="34" rx="6" fill="#cfe3f8" stroke="#5b86ad" stroke-width="2.5"/>
+  <circle cx="1014" cy="290" r="3.5" fill="#5b86ad"/>
+  <circle cx="1028" cy="290" r="3.5" fill="#5b86ad"/>
+  <circle cx="1042" cy="290" r="3.5" fill="#5b86ad"/>
+  <text x="1040" y="395" text-anchor="middle" font-size="24" font-family="Arial, sans-serif" fill="#1f2e3d">Web服务器（外部）</text>
+  <text x="1040" y="220" text-anchor="middle" font-size="24" font-family="Arial, sans-serif" fill="#1f2e3d">互联网</text>
+
+  <rect x="495" y="140" width="210" height="360" fill="#ffffff" stroke="#4d6d8b" stroke-width="4"/>
+  <rect x="535" y="245" width="130" height="90" rx="8" fill="#ffe7de" stroke="#cd6f51" stroke-width="3"/>
+  <rect x="550" y="262" width="33" height="16" fill="#d66c4f"/>
+  <rect x="587" y="262" width="33" height="16" fill="#d66c4f"/>
+  <rect x="624" y="262" width="33" height="16" fill="#d66c4f"/>
+  <rect x="550" y="282" width="33" height="16" fill="#d66c4f"/>
+  <rect x="587" y="282" width="33" height="16" fill="#d66c4f"/>
+  <rect x="624" y="282" width="33" height="16" fill="#d66c4f"/>
+  <text x="600" y="370" text-anchor="middle" font-size="28" font-family="Arial, sans-serif" fill="#1f2e3d">通信内容</text>
+  <text x="600" y="405" text-anchor="middle" font-size="28" font-family="Arial, sans-serif" fill="#1f2e3d">检查・中继</text>
+  <text x="600" y="548" text-anchor="middle" font-size="40" font-family="Arial, sans-serif" fill="#1f2e3d" font-weight="700">应用网关型FW（代理服务器）</text>
+
+  <line x1="250" y1="292" x2="488" y2="292" stroke="#4a89dc" stroke-width="8" marker-end="url(#blueArrow)"/>
+  <text x="370" y="250" text-anchor="middle" font-size="22" font-family="Arial, sans-serif" fill="#1f2e3d">1) 客户端发送HTTP请求</text>
+  <text x="370" y="278" text-anchor="middle" font-size="22" font-family="Arial, sans-serif" fill="#1f2e3d">（代理接收）</text>
+
+  <line x1="707" y1="292" x2="910" y2="292" stroke="#4a89dc" stroke-width="8" marker-end="url(#blueArrow)"/>
+  <text x="808" y="250" text-anchor="middle" font-size="22" font-family="Arial, sans-serif" fill="#1f2e3d">2) 检查内容并代理请求外部</text>
+
+  <line x1="910" y1="350" x2="707" y2="350" stroke="#5cb85c" stroke-width="8" marker-end="url(#greenArrow)"/>
+  <text x="808" y="385" text-anchor="middle" font-size="22" font-family="Arial, sans-serif" fill="#1f2e3d">3) 接收响应</text>
+
+  <line x1="488" y1="350" x2="250" y2="350" stroke="#5cb85c" stroke-width="8" marker-end="url(#greenArrow)"/>
+  <text x="370" y="385" text-anchor="middle" font-size="22" font-family="Arial, sans-serif" fill="#1f2e3d">4) 检查后代理响应客户端</text>
+
+  <text x="600" y="620" text-anchor="middle" font-size="38" font-family="Arial, sans-serif" fill="#1f2e3d">
+    代理位于客户端与外部服务器之间，对应用层数据进行检查后再放行
+  </text>
+</svg>

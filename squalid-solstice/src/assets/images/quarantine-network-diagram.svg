@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Quarantine Network Diagram</title>
+  <desc id="desc">Imported PC first enters quarantine segment for malware and patch checks, then either allowed to LAN or isolated.</desc>
+  <rect width="1200" height="700" fill="#f4f9ff"/>
+  <text x="600" y="56" text-anchor="middle" font-size="48" font-family="Arial, sans-serif" fill="#0d4f9a" font-weight="700">
+    検疫ネットワーク（Quarantine Network）
+  </text>
+
+  <defs>
+    <marker id="arrBlue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#1f78d1"/>
+    </marker>
+    <marker id="arrGreen" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#2ea44f"/>
+    </marker>
+    <marker id="arrRed" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#d73a49"/>
+    </marker>
+  </defs>
+
+  <rect x="350" y="120" width="430" height="390" fill="#ffffff" stroke="#1f78d1" stroke-width="6"/>
+  <rect x="350" y="120" width="430" height="56" fill="#1f78d1"/>
+  <text x="565" y="158" text-anchor="middle" font-size="30" font-family="Arial, sans-serif" fill="#ffffff" font-weight="700">
+    检疫网络（隔离段）
+  </text>
+
+  <rect x="470" y="230" width="80" height="100" rx="8" fill="#d7ebff" stroke="#3c6f99" stroke-width="3"/>
+  <line x1="485" y1="250" x2="535" y2="250" stroke="#3c6f99" stroke-width="3"/>
+  <line x1="485" y1="265" x2="535" y2="265" stroke="#3c6f99" stroke-width="3"/>
+  <text x="510" y="355" text-anchor="middle" font-size="28" font-family="Arial, sans-serif" fill="#1d2430">检疫服务器</text>
+
+  <rect x="610" y="200" width="80" height="100" rx="8" fill="#d7ebff" stroke="#3c6f99" stroke-width="3"/>
+  <line x1="625" y1="220" x2="675" y2="220" stroke="#3c6f99" stroke-width="3"/>
+  <line x1="625" y1="235" x2="675" y2="235" stroke="#3c6f99" stroke-width="3"/>
+  <text x="650" y="325" text-anchor="middle" font-size="28" font-family="Arial, sans-serif" fill="#1d2430">病毒防护服务器</text>
+
+  <rect x="610" y="350" width="80" height="100" rx="8" fill="#d7ebff" stroke="#3c6f99" stroke-width="3"/>
+  <line x1="625" y1="370" x2="675" y2="370" stroke="#3c6f99" stroke-width="3"/>
+  <line x1="625" y1="385" x2="675" y2="385" stroke="#3c6f99" stroke-width="3"/>
+  <text x="650" y="475" text-anchor="middle" font-size="28" font-family="Arial, sans-serif" fill="#1d2430">补丁服务器</text>
+
+  <line x1="550" y1="280" x2="610" y2="250" stroke="#1f78d1" stroke-width="5"/>
+  <line x1="550" y1="280" x2="610" y2="400" stroke="#1f78d1" stroke-width="5"/>
+
+  <rect x="70" y="250" width="95" height="70" rx="8" fill="#d9d9d9" stroke="#888" stroke-width="3"/>
+  <rect x="180" y="245" width="40" height="80" rx="6" fill="#efefef" stroke="#888" stroke-width="3"/>
+  <path d="M82 238 h72 l16 12 h-104 z" fill="#c6c6c6" stroke="#888" stroke-width="2"/>
+  <text x="145" y="390" text-anchor="middle" font-size="32" font-family="Arial, sans-serif" fill="#1d2430">外来PC</text>
+
+  <line x1="225" y1="285" x2="343" y2="285" stroke="#1f78d1" stroke-width="10" marker-end="url(#arrBlue)"/>
+  <text x="285" y="250" text-anchor="middle" font-size="24" font-family="Arial, sans-serif" fill="#1d2430">先接入检疫网络</text>
+
+  <ellipse cx="980" cy="360" rx="160" ry="90" fill="#ffffff" stroke="#1f78d1" stroke-width="5"/>
+  <rect x="895" y="330" width="70" height="46" rx="6" fill="#eef6ff" stroke="#5b86ad" stroke-width="3"/>
+  <rect x="980" y="315" width="72" height="100" rx="7" fill="#d7ebff" stroke="#5b86ad" stroke-width="3"/>
+  <rect x="1065" y="332" width="70" height="46" rx="6" fill="#eef6ff" stroke="#5b86ad" stroke-width="3"/>
+  <text x="980" y="515" text-anchor="middle" font-size="36" font-family="Arial, sans-serif" fill="#1d2430">社内LAN</text>
+
+  <line x1="780" y1="340" x2="820" y2="340" stroke="#2ea44f" stroke-width="10"/>
+  <line x1="820" y1="340" x2="890" y2="340" stroke="#2ea44f" stroke-width="10" marker-end="url(#arrGreen)"/>
+  <text x="835" y="300" text-anchor="middle" font-size="24" font-family="Arial, sans-serif" fill="#17803a">检查通过 / 允许接入</text>
+
+  <line x1="780" y1="240" x2="900" y2="240" stroke="#d73a49" stroke-width="10" marker-end="url(#arrRed)"/>
+  <text x="840" y="208" text-anchor="middle" font-size="24" font-family="Arial, sans-serif" fill="#b42330">检测到风险 / 禁止接入</text>
+  <circle cx="965" cy="240" r="38" fill="#ffffff" stroke="#d73a49" stroke-width="8"/>
+  <line x1="945" y1="220" x2="985" y2="260" stroke="#d73a49" stroke-width="8"/>
+  <line x1="985" y1="220" x2="945" y2="260" stroke="#d73a49" stroke-width="8"/>
+
+  <text x="600" y="650" text-anchor="middle" font-size="34" font-family="Arial, sans-serif" fill="#1d2430">
+    外来终端先隔离检查，确认安全后再进入业务网络
+  </text>
+</svg>

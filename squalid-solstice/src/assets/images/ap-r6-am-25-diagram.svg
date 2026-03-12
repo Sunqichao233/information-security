@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360" role="img" aria-label="Carousel diagram">
+  <rect width="900" height="360" fill="#f8fbff"/>
+  <rect x="40" y="30" width="820" height="280" rx="10" fill="#ffffff" stroke="#cfd9e5" stroke-width="3"/>
+  <polygon points="95,165 145,140 145,190" fill="#0f172a"/>
+  <polygon points="805,165 755,140 755,190" fill="#0f172a"/>
+
+  <rect x="180" y="95" width="180" height="120" rx="6" fill="#f5f8fc" stroke="#a9b8c9" stroke-width="3"/>
+  <rect x="360" y="95" width="180" height="120" rx="6" fill="#f5f8fc" stroke="#a9b8c9" stroke-width="3"/>
+  <rect x="540" y="95" width="180" height="120" rx="6" fill="#f5f8fc" stroke="#a9b8c9" stroke-width="3"/>
+
+  <text x="270" y="165" text-anchor="middle" font-size="34" fill="#5b6471" font-family="sans-serif">画像1</text>
+  <text x="450" y="165" text-anchor="middle" font-size="34" fill="#5b6471" font-family="sans-serif">画像2</text>
+  <text x="630" y="165" text-anchor="middle" font-size="34" fill="#5b6471" font-family="sans-serif">画像3</text>
+
+  <circle cx="390" cy="255" r="12" fill="#ffffff" stroke="#7b8796" stroke-width="3"/>
+  <circle cx="435" cy="255" r="12" fill="#ffffff" stroke="#7b8796" stroke-width="3"/>
+  <circle cx="480" cy="255" r="12" fill="#0f172a"/>
+  <circle cx="525" cy="255" r="12" fill="#ffffff" stroke="#7b8796" stroke-width="3"/>
+  <circle cx="570" cy="255" r="12" fill="#ffffff" stroke="#7b8796" stroke-width="3"/>
+</svg>
